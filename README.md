@@ -66,5 +66,5 @@ This project is licensed under a **non-commercial license**, meaning it can be u
 
 ---
 
-Developed by **Felipe Ladislau** 🚀
+Developed by **Felipe Ladislau** with GPT help 🚀
 
