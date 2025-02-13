@@ -1,0 +1,204 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .chat-window {
+    width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+  }
+  
+  .chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+  }
+  
+  .chat-input {
+    display: flex;
+    border-top: 1px solid #ddd;
+  }
+  
+  .chat-input input {
+    flex: 1;
+    border: none;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .chat-input button {
+    border: none;
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .chat-input input:focus, .chat-input button:focus {
+    outline: none;
+  }
+  
+  .message {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    max-width: 95%;
+  }
+  
+  .message.user {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+  }
+  
+  .message.assistant {
+    background-color: #f1f0f0;
+    align-self: flex-start;
+    white-space: pre-wrap;
+  }
+  
+/* Target the code block */
+pre.language-bash { /* Or target all pre elements with a specific class for code */
+  background-color: #1e1e1e; /* VS Code dark background */
+  color: #d4d4d4; /* VS Code default text color */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  overflow: auto; /* Add scrollbars if the code overflows */
+  font-family: 'Consolas', 'Courier New', monospace; /* VS Code font stack */
+  font-size: 14px; /* Adjust font size as needed */
+  line-height: 1.4; /* Adjust line height for readability */
+}
+
+/* Style the code inside the pre element */
+pre.language-bash code {
+  background-color: transparent; /* Make sure code has transparent background */
+  padding: 0; /* Remove default code padding */
+  color: #d4d4d4; /* Inherit text color from pre */
+}
+
+/* Style line numbers (if you add them) */
+.line-numbers-rows > span:before { /* Target line number spans */
+  color: #6a9955; /* VS Code green for line numbers */
+  opacity: 1; /* Make line numbers fully visible */
+}
+
+/* Style highlighted keywords (example: 'function' in JavaScript) */
+.language-bash .token.keyword {
+  color: #569cd6; /* VS Code blue for keywords */
+}
+
+/* Style strings (example: "hello" in JavaScript) */
+.language-bash .token.string {
+  color: #ce9178; /* VS Code orange/brown for strings */
+}
+
+/* Style comments */
+.language-bash .token.comment {
+  color: #6a9955; /* VS Code green for comments */
+}
+
+/* Target the pre element containing the code and line numbers */
+pre.language-bash.line-numbers { /* Or target all pre elements with line numbers */
+  position: relative; /* Needed for positioning the line numbers */
+  padding-left: 3.5em; /* Adjust this value to create space for line numbers */
+  counter-reset: linenumber; /* Reset line number counter */
+  background-color: #1e1e1e; /* VS Code dark background */
+  color: #d4d4d4; /* VS Code default text color */
+  padding: 10px; /* Add some padding */
+  border-radius: 5px; /* Rounded corners */
+  overflow: auto; /* Add scrollbars if the code overflows */
+  font-family: 'Consolas', 'Courier New', monospace; /* VS Code font stack */
+  font-size: 14px; /* Adjust font size as needed */
+  line-height: 1.4; /* Adjust line height for readability */
+}
+
+/* Target the line numbers container */.line-numbers-rows {
+  position: absolute; /* Position the line numbers outside the code block */
+  left: 0; /* Align to the left edge of the pre element */
+  top: 0; /* Align to the top of the pre element */
+  height: 100%; /* Make line numbers container take full height */
+  width: 3em; /* Adjust width as needed */
+  padding-top: 5px; /* Add some top padding to align with code */
+  font-family: 'Consolas', 'Courier New', monospace;
+  text-align: right; /* Align line numbers to the right */
+  color: #6a9955; /* VS Code line number color */
+  font-size: 14px;
+  line-height: 1.4;
+  pointer-events: none; /* Prevent interaction with line numbers */
+}
+
+/* Style individual line numbers */.line-numbers-rows > span {
+  display: block; /* Make line numbers stack vertically */
+}.line-numbers-rows > span:before {
+  content: counter(linenumber); /* Display the line number */
+  counter-increment: linenumber; /* Increment the line number counter */
+  padding-right: 8px; /* Add some space between line number and code */
+  display: inline-block; /* Required for padding to work */
+  width: 100%; /* Make sure padding applies to full width */
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Style the code inside the pre element */
+pre.language-bash.line-numbers code {
+  padding: 0; /* Remove default code padding */
+  background-color: transparent; /* Make sure code has transparent background */
+  color: #d4d4d4; /* Inherit text color from pre */
+}
+
+/* Style highlighted keywords (example: 'function' in JavaScript) */.language-bash.token.keyword {
+  color: #569cd6; /* VS Code blue for keywords */
+}
+
+/* Style strings (example: "hello" in JavaScript) */.language-bash.token.string {
+  color: #ce9178; /* VS Code orange/brown for strings */
+}
+
+/* Style comments */.language-bash.token.comment {
+  color: #6a9955; /* VS Code green for comments */
+}
+
+/* Style numbers */.language-bash.token.number {
+  color: #b5cea8; /* VS Code light green for numbers */
+}
+
+/* Add more styles for other token types as needed (e.g., punctuation, operators) */
+
+/* Styles for the chat messages (adjust as needed) */.chat-messages.message {
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+}.chat-messages.message.user {
+  background-color: #e0f2f7; /* Example: Light blue for user messages */
+  text-align: right; /* Align user messages to the right */
+}.chat-messages.message.assistant {
+  background-color: #f0f0f0; /* Example: Light gray for assistant messages */
+  text-align: left; /* Align assistant messages to the left */
+}
+
+
+/* Copy button styles */
+.prism-copy-to-clipboard-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  opacity: 0.7;
+  transition: opacity 0.3s;
+}.prism-copy-to-clipboard-button:hover {
+  opacity: 1;
+}.prism-copy-to-clipboard-button:active {
+  background-color: #3e8e41;
+}.prism-copy-to-clipboard-button:focus {
+  outline: none;
+}
